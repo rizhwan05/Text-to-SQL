@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Query Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #343131;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #ffd500;
+            text-align: center;
+        }
+        h3{
+            color: #ffd500;
+            text-align: center;
+        }
+        form {
+            background: rgb(255, 230, 0);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+        button {
+            padding: 10px 15px;
+            background: #000000;
+            color: #ffd500;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        button:hover {
+            background: #218838;
+        }
+        pre {
+    background: #ffd500;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    display: block;  /* Ensures text wraps line by line */
+    text-align: left;
+    white-space: pre-wrap; /* Preserves line breaks */
+    word-wrap: break-word; /* Ensures text doesn't overflow */
+    font-family: monospace; /* Keeps SQL formatting readable */
+}
+
+    </style>
+</head>
+<body>
+    <h2>Natural Language to SQL Generator</h2>
+    <form method="POST">
+        <label for="user_input">Enter your request:</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <button type="submit">Generate SQL</button>
+    </form>
+
+    {% if sql_query %}
+        <h3>Generated SQL Query:</h3>
+        <pre>{{ sql_query }}</pre>
+    {% endif %}
+</body>
+</html>
